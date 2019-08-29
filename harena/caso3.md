@@ -1,7 +1,7 @@
 Cycle 1
 =======
 
-Begin (start)
+Begin (start, presentation_3)
 -------------
   ![Emergency room](theme/background-emergency-room-1.png)
 
@@ -31,7 +31,8 @@ Generate hypothesis (input)
 
 More information (information)
 ------------------------------
-![Emergency room](theme/background-emergency-room-2.png)
+  ![Emergency room](theme/background-emergency-room-2.png)
+
 <b>MORE INFORMATION</b> <br> The patient had never felt similar chest pain before. He had never had myocardial infarction. He made a cardiovascular “check-up” last year, resulting normal. He denies smoking cigarettes, and he was not immobilized nor made long trip recently.
 
 @PATIENT Jakob
@@ -54,16 +55,8 @@ fatal causes: myocardial infarction (MI), acute aortic dissection
 and Boerhaave Syndrome (BS).
 The best way to find out what is happening with your patient, my young padawan, is to gather as much information as possible through history taking and physical examination. We need to search for the signs and symptoms that can guide our clinical reasoning process by changing the pre-test probabilities of each disease.
 
-@SYSTEM: What do you want to do?
 
-* See likelihood tables -> B 
-
-### B (detailed)
-  @SUPERVISOR Harry
-
-Do you know the concept of "Likelihood ratio (LR)" -> "Likelihood Ratio"?
-
-**Likelihood Tables**
+Do you know the concept of Likelihood ratio (LR)?
 
 + -> Clinical History Myocardial Infarction
 
@@ -75,44 +68,39 @@ Do you know the concept of "Likelihood ratio (LR)" -> "Likelihood Ratio"?
 
 + -> Pulmonary Embolism Wells Criteria
 
-* Continue talking -> C 
-
-### C (detailed)
-  @SUPERVISOR Harry
-  
 Hypertensive pneumothorax is more common in tall and thin young adults (primary pneumothorax) or in patients with chronic pulmonary diseases or chest trauma (secondary pneumothorax). On physical examination, we expect asymmetry in lung auscultation and the trachea may be dislocated to the contralateral side of the pneumothorax.
 Boerhaave Syndrome is more common in patients who presented vomiting before the chest pain started, were submitted to endoscopic procedures or had chest trauma.
 How does this information can help you to solve your case?
 
 * Back to the case -> Cycle 1.Begin
 
-### Likelihood Ratio (note)
+### Likelihood Ratio (notice)
 
 Likelihood ratio (LR) - like sensitivity and specificity, LR describe the discriminatory power of features in a clinical context, estimating the probability of disease. When the LR is higher than 1, the feature increases the probability; when lower than 1, reduces it.
 
 * Back -> Supervisor B
 
-### Clinical History Myocardial Infarction (note)
+### Clinical History Myocardial Infarction (notice)
 ![Clinical History Myocardial Infarction](https://www.ic.unicamp.br/~santanch/lab/health-game/jacinto-harena-5-images/case01/ebm-clinical-history-myocardial-infarction.png)
 
 * Back -> Supervisor B
 
-### Physical Examination Myocardial Infarction (note)
+### Physical Examination Myocardial Infarction (notice)
 ![Physical Examination Myocardial Infarction](https://www.ic.unicamp.br/~santanch/lab/health-game/jacinto-harena-5-images/case01/ebm-physical-examination-myocardial-infarction.png)
 
 * Back -> Supervisor B
 
-### Clinical History Aortic Dissection (note)
+### Clinical History Aortic Dissection (notice)
 ![Clinical History Aortic Dissection](https://www.ic.unicamp.br/~santanch/lab/health-game/jacinto-harena-5-images/case01/ebm-clinical-history-aortic-dissection.png)
 
 * Back -> Supervisor B
 
-### Physical Examination Aortic Dissection (note)
+### Physical Examination Aortic Dissection (notice)
 ![Physical Examination Aortic Dissection](https://www.ic.unicamp.br/~santanch/lab/health-game/jacinto-harena-5-images/case01/ebm-physical-examination-aortic-dissection.png)
 
 * Back -> Call the supervisor B
 
-### Pulmonary Embolism Wells Criteria (note)
+### Pulmonary Embolism Wells Criteria (notice)
 ![Pulmonary Embolism Wells Criteria](https://www.ic.unicamp.br/~santanch/lab/health-game/jacinto-harena-5-images/case01/ebm-pulmonary-embolism-wells-criteria.png)
 
 * Back -> Call the supervisor B
@@ -174,7 +162,7 @@ pressure is symmetric in the four limbs.
 * -> More information
 * -> Call the supervisor
 
-## Magnify EKG (note,magnify_exam)
+## Magnify EKG (notice,magnify_exam)
 
 @EKG
 
@@ -208,14 +196,14 @@ normal QRS axis (0 – 90 degrees)<br>
 supra ST in DI, DII, DIII, avF, V2-V6 leads
 
 @EKG
-  ![EKG](https://www.ic.unicamp.br/~santanch/lab/health-game/jacinto-harena-5-images/caso03/SOBRECARGA_DE_VE_2.jpg)
+  
 
 * Analyze EKG -> EKG Analysis
 
 @SYSTEM: What do you want to do?
 * Back -> Order EKG
 
-## EKG Analysis (note,marker_exam)
+## EKG Analysis (notice,marker_exam)
 
 <dcc-group-marker context="ekg" image="images/ekg.png">
    <dcc-image-marker id="DI" label="DI" coords="238,127,164,76" image="images/ekg-detail-01.png"></dcc-image-marker>
@@ -229,7 +217,7 @@ supra ST in DI, DII, DIII, avF, V2-V6 leads
 
 * Return -> Order EKG
 
-## Call the supervisor (decision_exam)
+## Call the supervisor (exam)
 @"SUPERVISOR Harry" - My young padawm, we are really facing a very difficult case.
 Our patient´s chest pain irradiates to his back and was sudden, both
 features that increases the likelihood ratio for acute aortic dissection.
@@ -243,13 +231,13 @@ S. Observe que o supra tem concavidade superior, e é seguido de
 onda T positiva e assimétrica (normal), e portanto consideramos o
 supra secundário a hipertrofia ventricular, e não secundário à
 isquemia.
+
 * -> EKG Analysis
 
 @EKG
 
-@Game: What do you want to do?
+@SYSTEM: What do you want to do?
 * Back -> Order EKG
-* Analyze EKG -> EKG Analysis
 
 ## Check hypothesis (marker_exam)
 
@@ -292,7 +280,7 @@ Level 1 (detailed)
 <b>Level 1</b>: your answer was ^Cycle 1.Generate hypothesis.hypothesis^.
 
 * Next -> Level 2.2a
-* Return -> Report
+
 
 Level 2
 -------
@@ -311,17 +299,17 @@ Level 2
 </div>
 
 * Next -> 2b
-* Return -> Final.Report
+
 
 ### 2b (detailed)
 
 * Next -> 2c
-* Return -> Final.Report
+
 
 ### 2c (detailed)
 
 * Next -> Level 3.3a
-* Return -> Final.Report
+
 
 Level 3
 -------
@@ -329,12 +317,12 @@ Level 3
 ### 3a (detailed)
 
 * Next -> 3b
-* Return -> Final.Report
+
 
 ### 3b (detailed)
 
 * Next -> 3c
-* Return -> Final.Report
+
 
 ### 3c (detailed)
 <div style="font-size: 18px">
@@ -346,8 +334,6 @@ Cooper LT, Imazio M. Management of myopericarditis. Expert Rev Cardiovasc Ther 2
 
 Our patient fullfill the following criteria: 1 and 3. So, acute pericarditis is the main diagnostic hypothesis.
 </div>
-
-* Return -> Final.Report  
 
 # _Case_
 * theme: jacinto
