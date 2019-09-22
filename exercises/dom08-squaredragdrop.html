@@ -5,40 +5,36 @@
       let follow = null;
       let square = null;
       let position = null;
+      let quadradoElem = null;
       function Start() {
          follow = false;
          square = document.querySelector("#movel");
          position = {};
          let area = document.querySelector("#area");
-         square.addEventListener("mousedown", Down);
+         quadradoElem = document.querySelector(".pointerDiff");
+         quadradoElem.addEventListener("mousedown", Down);
          area.addEventListener("mousemove", Move);
          square.addEventListener("mouseup", Up);
-
-         square.addEventListener("click", quadradoFunc);
-         //quadrado.addEventListener("mouseup", Up);
+         quadradoElem.addEventListener("mouseup", Up);
       }
       function Down(event) {
          follow = true;
-         position.dx = event.x - Number(square.getAttribute("x"));
-         position.dy = event.y - Number(square.getAttribute("y"));
+         quadradoElem.classList.add("visivel")
       }
       function Move(event) {
          if (follow) {
-            // square.setAttribute("x", event.x - position.dx);
-            // square.setAttribute("y", event.y - position.dy);
             square.setAttribute("width", event.x );
             square.setAttribute("height", event.y );
+            quadradoElem.setAttribute("x", event.x -5 );
+            quadradoElem.setAttribute("y", event.y -5);
          }
       }
       function Up(event) {
          follow = false;
+         quadradoElem.classList.toggle("visivel")
       }
-
       function quadradoFunc(event){
-        let quadradoElem = document.querySelector(".pointerDiff");
-         console.log(quadradoElem)
-
-        quadradoElem.classList.toggle("visivel")    
+        quadradoElem.classList.toggle("visivel")
       }
    </script>
 
@@ -46,7 +42,7 @@
         .pointerDiff{
             visibility: hidden;
             fill: blue;
-            cursor: pointer
+            cursor: nwse-resize
         }
         .visivel{
             visibility: visible
