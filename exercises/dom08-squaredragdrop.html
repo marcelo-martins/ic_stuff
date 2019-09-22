@@ -12,6 +12,7 @@
          position = {};
          let area = document.querySelector("#area");
          quadradoElem = document.querySelector(".pointerDiff");
+         quadradoElem.classList.toggle("visivel");
          quadradoElem.addEventListener("mousedown", Down);
          area.addEventListener("mousemove", Move);
          square.addEventListener("mouseup", Up);
@@ -31,10 +32,10 @@
       }
       function Up(event) {
          follow = false;
-         quadradoElem.classList.toggle("visivel")
+         quadradoElem.classList.toggle("visivel");
       }
       function quadradoFunc(event){
-        quadradoElem.classList.toggle("visivel")
+        quadradoElem.classList.toggle("visivel");
       }
    </script>
 
